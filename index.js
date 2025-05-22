@@ -38,30 +38,36 @@ console.log(result1) // выводит результат 6
 
 // 3
 function Calc() {
-  this.result = 0 // устанавливаю значение по умолчанию
-  this.add = num => this.result += num // сложение которое записывается в result
-  this.subtract = num => this.result -= num // вычитание
-  this.multiply = num => this.result *= num // умножение
-  this.divide = num => this.result /= num // деление
-  this.reset = () => this.result = 0 // сброс 
-  this.getValue = () => this.result // возвращает актуальное значение в result
+  this.result = 0; // устанавливаю значение по умолчанию
+  this.add = num => {
+      this.result += num // сложение которое записывается в result
+      return this
+    } 
+  this.subtract = num => {
+    this.result -= num; // вычитание
+    return this // возвращает текущее значение
+  }
+  this.multiply = num => {
+    this.result *= num; // умножение
+    return this
+  } 
+  this.divide = num => {
+    this.result /= num; // деление
+    return this
+  } 
+  this.reset = () => {
+    this.result = 0; // сброс 
+    return this
+  } 
+  this.getValue = () => this.result; // возвращает актуальное значение в result
 }
 
-const useCalc = new Calc() // собираем конструктором функцию Calc
+const useCalc = new Calc(); // собираем конструктором функцию Calc
 
-console.log(useCalc.result) // проверяю значение по умолчанию
+console.log(useCalc.result)
 
-useCalc.add(100) // передаём значение на сложение
-console.log(useCalc.getValue()) // проверяем актуальное значение в result
+const res = useCalc.add(5).multiply(2).subtract(4).divide(2).getValue()
+console.log(res)
 
-useCalc.subtract(8) // передаём значение на вычитание 
-console.log(useCalc.getValue())
-
-useCalc.multiply(2) // передаём значение на умножение
-console.log(useCalc.getValue())
-
-useCalc.divide(4) // передаём значение на деление
-console.log(useCalc.getValue())
-
-useCalc.reset() // обнуляет результат присваивая 0
-console.log(useCalc.getValue())
+const res1 = useCalc.reset().getValue()
+console.log(res1)
