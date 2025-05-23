@@ -71,3 +71,30 @@ console.log(res)
 
 const res1 = useCalc.reset().getValue()
 console.log(res1)
+
+// 4
+// 4.1
+let strOrig = 'hello' // строка которую надо резвернуть
+let strRev = '' // переменная в которую будет записываться мутированная строка
+
+function reverseString() { // объявляем функцию для разворота строки
+  for (let i = strOrig.length - 1; i >= 0; i--) { // проходимся по элементам строки в обратном порядке так как тип string итерируемый
+    strRev += strOrig[i] // складываем результат полученный в результате цикла и присваеваем его в переменную для записи результата
+  }
+  return strRev // возвращаем результат цикла
+}
+
+console.log(reverseString()) // выводим в консоль функцию и вызываем её
+
+// 4.2
+let strNum = '12345'
+let newStrNum = ''
+
+function reverseStringNum() {
+  for (let i = strNum.length - 1; i >= 0; i--) {
+    newStrNum += strNum[i]
+  }
+  return newStrNum
+}
+
+console.log(reverseStringNum())
