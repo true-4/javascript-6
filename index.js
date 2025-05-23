@@ -162,3 +162,21 @@ function startsWithWord2(argLine, argWord) {
   return true
 }
 console.log(startsWithWord2('Hello world', 'world'))
+
+// 7
+// 7.1
+let strSpaces = ' hello '
+console.log(strSpaces)
+
+function trimSpaces(str) {
+  let newStr = ''
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== ' ') {
+      newStr += str[i]
+    }
+  }
+  return newStr
+}
+
+let newStrNoSpaces = trimSpaces(strSpaces)
+console.log(newStrNoSpaces)
