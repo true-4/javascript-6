@@ -133,3 +133,32 @@ function capitalizeFirst2() {
 }
 
 console.log(capitalizeFirst2())
+
+// 6
+// 6.1
+function startsWithWord(argumentLine, argumentWord) { // объявляю функцию и указываю параметры строки и слова с которым будем сравнивать строку
+  if (argumentWord.length > argumentLine.length) { // указываю что слово не может быть длинее строки
+    return false // если слово длинее строки вернёт ложь
+  }
+  for (let i = 0; i < argumentWord.length; i++) { // прохожу циклом по длине слова
+    if (argumentLine[i] !== argumentWord[i]) { // если строка не ровна по индексам
+      return false // возвращает ложь
+    }
+  }
+  return true // возвращает истину если все ложные условия не выполнились
+}
+console.log(startsWithWord('JavaScript is cool', 'Java')) // вывожу в консоль функцию и вызываю её передавая ей параметры (строка, слово)
+
+// 6.2
+function startsWithWord2(argLine, argWord) {
+  if (argWord > argLine) {
+    return false
+  }
+  for (let i = 0; i < argWord.length; i++) {
+    if (argLine[i] !== argWord[i]) {
+      return false
+    }
+  }
+  return true
+}
+console.log(startsWithWord2('Hello world', 'world'))
