@@ -74,7 +74,7 @@ console.log(res1)
 
 // 4
 // 4.1
-let strOrig = 'hello' // строка которую надо резвернуть
+const strOrig = 'hello' // строка которую надо резвернуть
 let strRev = '' // переменная в которую будет записываться мутированная строка
 
 function reverseString() { // объявляем функцию для разворота строки
@@ -87,7 +87,7 @@ function reverseString() { // объявляем функцию для разв�
 console.log(reverseString()) // выводим в консоль функцию и вызываем её
 
 // 4.2
-let strNum = '12345'
+const strNum = '12345'
 let newStrNum = ''
 
 function reverseStringNum() {
@@ -98,3 +98,38 @@ function reverseStringNum() {
 }
 
 console.log(reverseStringNum())
+
+// 5
+// 5.1
+const strDef = 'hello'
+let strFirstLiterUp = ''
+
+function capitalizeFirst() {
+  for (let i = 0; i < strDef.length; i++) {
+    if (i === 0) {
+      strFirstLiterUp += 'H'
+    } else {
+      strFirstLiterUp += strDef[i]
+    }
+  }
+  return strFirstLiterUp
+}
+
+console.log(capitalizeFirst())
+
+// 5.2 вопрос javascript > JavaScript
+const origStr = 'javaScript'
+let strFirstLiterUp2 = ''
+
+function capitalizeFirst2() {
+  for (let i = 0; i < origStr.length; i++) {
+    if (i === 0) {
+      strFirstLiterUp2 += 'J'
+    } else {
+      strFirstLiterUp2 += origStr[i]
+    }
+  }
+  return strFirstLiterUp2
+}
+
+console.log(capitalizeFirst2())
