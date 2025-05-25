@@ -164,8 +164,7 @@ function startsWithWord2(argLine, argWord) {
 console.log(startsWithWord2('Hello world', 'world'))
 
 // 7
-// 7.1
-let strSpaces = ' hello '
+const strSpaces = ' hello '
 console.log(strSpaces)
 
 function trimSpaces(str) {
@@ -180,3 +179,26 @@ function trimSpaces(str) {
 
 let newStrNoSpaces = trimSpaces(strSpaces)
 console.log(newStrNoSpaces)
+
+// 8
+function replaceWord(str, oldWord, newWord) {
+  let mutatedStr = ''
+  const wordLength = oldWord
+  const strLength = str
+  for (let i = 0; i < strLength.length; i++) {
+    if (str.substring(i, i + wordLength.length) === oldWord) {
+      mutatedStr += newWord
+      i += wordLength.length - 1
+    } else {
+      mutatedStr += str[i]
+    }
+  }
+  return mutatedStr
+}
+
+const origString = 'I like Cats. Cats are cute.'
+const oldWord = 'Cats'
+const newWord = 'Dogs'
+
+const replaceStr = replaceWord(origString, oldWord, newWord)
+console.log(replaceStr)
